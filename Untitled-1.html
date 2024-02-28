@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Gift</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    #content {
+      text-align: center;
+    }
+
+    button {
+      border-radius: 8px;
+      border: 1px solid transparent;
+      padding: 0.6em 1.2em;
+      font-size: 1em;
+      font-weight: 500;
+      font-family: inherit;
+      background-color: #1a1a1a;
+      color: #fff;
+      cursor: pointer;
+      transition: border-color 0.25s, background-color 0.25s;
+      margin-right: 10px;
+    }
+    
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <img src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" alt="Cartoon GIF">
+    <p>Is it okay to have no gift for your birthday? 生日没有礼物可以吗？</p>
+    <button onclick="showResponse()">Yes</button>
+    <button onclick="showNoResponse()" id="noButton">No</button>
+  </div>
+
+  <div id="response" style="display: none;">
+    <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Cartoon GIF">
+    <p>怎么可能没有礼物呀！礼物在车里！！ How could there be no gift? The gift is in the car!!</p>
+  </div>
+
+  <script>
+    var noButtonTexts = [
+      "Are you sure?",
+      "What if I asked really nicely?",
+      "Pretty please",
+      "你最好了goi",
+      "真的木有钱了，拜托拜托",
+      "好吧好吧，这次就出出血了",
+      "" // Add an empty string to indicate the end of "No" texts
+    ];
+
+    var noButtonIndex = 0;
+
+    function showResponse() {
+      document.getElementById('content').style.display = 'none';
+      document.getElementById('response').style.display = 'block';
+    }
+
+    function showNoResponse() {
+      if (noButtonIndex < noButtonTexts.length - 1) { // Adjusted to stop before the last empty string
+        document.getElementById('noButton').innerText = noButtonTexts[noButtonIndex];
+        noButtonIndex++;
+      } else {
+        showResponse(); // If all "No" texts are shown, proceed to "Yes" response
+        document.getElementById('noButton').style.display = 'none'; // Hide the "No" button
+      }
+    }
+  </script>
+</body>
+</html>
