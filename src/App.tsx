@@ -28,7 +28,7 @@ export default function Page() {
       {yesPressed ? (
         <>
           <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
-          <div className="my-4 text-4xl font-bold">怎么可能没有礼物，哈哈哈哈，惊喜在车里!!<br></br>How could there be no gift? Hahahaha, the surprise is in the car ;))</div>
+          <div className="my-4 text-4xl font-bold">怎么可能没有礼物!!!哈哈哈哈，惊喜在车里!!<br>How could there be no gift!!! Hahahaha, the surprise is in the car!!! ;))</div>
         </>
       ) : (
         <>
